@@ -18,18 +18,19 @@ func main() {
 
 	if port == "" {
 		port = "8080"
+
 	}
 
 	router := gin.New()
 	router.Use(gin.Logger())
-	routes.UserRouter(router)
+	routes.UserRoutes(router)
 	router.Use(middleware.Authentication())
-	routes.FoodRouter(router)
-	routes.OrderRouter(router)
-	routes.OrderItemRouter(router)
-	routes.MenuRouter(router)
-	routes.InvoiceRouter(router)
-	routes.TableRouter(router)
+	routes.FoodRoutes(router)
+	routes.OrderRoutes(router)
+	routes.OrderItemRoutes(router)
+	routes.MenuRoutes(router)
+	routes.InvoiceRoutes(router)
+	routes.TableRoutes(router)
 
 	err := router.Run(":" + port)
 	if err != nil {
