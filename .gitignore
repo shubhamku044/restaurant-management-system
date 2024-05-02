@@ -25,5 +25,7 @@
 go.work
 
 .env
+/tmp
+gin-bin
 
 # End of https://www.toptal.com/developers/gitignore/api/go
