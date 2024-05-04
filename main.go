@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"github.com/shubhamku044/restaurant-management-system/database"
+	"github.com/shubhamku044/restaurant-management-system/middleware"
 	"github.com/shubhamku044/restaurant-management-system/routes"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -38,7 +39,7 @@ func main() {
 		})
 	})
 	routes.UserRoutes(router)
-	// router.Use(middleware.Authentication())
+	router.Use(middleware.Authentication())
 	routes.FoodRoutes(router)
 	routes.OrderRoutes(router)
 	routes.OrderItemRoutes(router)
